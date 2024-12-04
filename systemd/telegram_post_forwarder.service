@@ -1,0 +1,13 @@
+[Unit]
+Description=Telegram Post Forwarder Script
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/ec2-user/telegram-post-forwarder/main.py
+WorkingDirectory=/home/ec2-user/telegram-post-forwarder
+Restart=always
+User=ec2-user
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
